@@ -73,6 +73,11 @@ Changes between 0.74 and 0.75
 7. Add '--random-hash' to randomise hash tables for greater security
 8. `dict` now supports 'for', 'values', 'incr', 'append', 'lappend', 'update', 'info' and 'replace'
 9. `file stat` no longer requires the variable name
+10. Add support for `file link`
+11. `glob` now supports the '--tails' option
+12. Add support for `string cat`
+13. Allow `info source` to add source info
+14. Add new 'interp' module
 
 Changes between 0.73 and 0.74
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4930,6 +4935,20 @@ Provides namespace-related functions. See also: http://www.tcl.tk/man/tcl8.6/Tcl
 
 +*namespace which* '?-command|-variable? name'+::
     Looks up +'name'+ as either a command (the default) or variable and returns its fully-qualified name.
+
+interp
+~~~~~~
+The optional, 'interp' command allows sub-interpreters to be created where commands may be run
+independently (but synchronously) with the main interpreter.
+
++*interp*+::
+    Creates and returns a new interpreter object (command).
+
++*$interp delete*+::
+
++*$interp eval* 'script' ...+::
+
++*$interp alias* 'alias childcmd parentcmd ?arg ...?'+::
 
 [[BuiltinVariables]]
 BUILT-IN VARIABLES
